@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Broadus Consulting Services</title>
+<meta name="description" content="Contact Broadus Consulting Services or opt in to text message updates.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html"><span class="mark">B</span>Broadus Consulting Services</a>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="document.getElementById('nav').classList.toggle('open')">&#9776;</button>
+    <nav class="main" id="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#listings">Listings</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="page-title"><div class="container"><h1>Contact Us</h1><p>Request a consultation or sign up for text message updates.</p></div></div>
+<section>
+  <div class="container grid cols-2">
+    <div>
+      <h2>Get in Touch</h2>
+      <p>Fill out the form and a member of our team will reach out within one business day.</p>
+      <p><strong>Phone:</strong> <a href="tel:+14802625011">(480) 262-5011</a><br>
+      <strong>Email:</strong> <a href="mailto:jbroadus@adaxahome.com">jbroadus@adaxahome.com</a><br>
+      <strong>Office:</strong> 8301 S Taylor Dr, Tempe, AZ 85284<br>
+      <strong>Hours:</strong> Monday&ndash;Friday, 9:00 AM &ndash; 6:00 PM</p>
+      <div class="callout small">
+        <strong>About our text messages.</strong> If you opt in, Broadus Consulting Services will send you SMS messages about your consultation, property showings, listing updates, and appointment reminders. Message frequency varies. Message and data rates may apply. Reply STOP to cancel or HELP for help at any time. See our <a href="sms-terms.html">SMS Terms</a> and <a href="privacy-policy.html">Privacy Policy</a>.
+      </div>
+    </div>
+    <div class="card">
+      <form id="contact-form" action="#" method="post" novalidate>
+        <div class="row">
+          <div class="field"><label for="first">First name *</label><input type="text" id="first" name="first_name" required autocomplete="given-name"></div>
+          <div class="field"><label for="last">Last name *</label><input type="text" id="last" name="last_name" required autocomplete="family-name"></div>
+        </div>
+        <div class="field"><label for="email">Email *</label><input type="email" id="email" name="email" required autocomplete="email"></div>
+        <div class="field"><label for="phone">Mobile phone *</label><input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="(555) 555-5555"></div>
+        <div class="field"><label for="interest">I am interested in</label>
+          <select id="interest" name="interest">
+            <option>Buying a home</option><option>Selling a home</option><option>Investment property</option><option>General consultation</option>
+          </select></div>
+        <div class="field"><label for="message">Message</label><textarea id="message" name="message" rows="4"></textarea></div>
+        <div class="consent">
+          <input type="checkbox" id="sms_consent" name="sms_consent" value="yes">
+          <label for="sms_consent">By checking this box, I agree to receive SMS text messages from Broadus Consulting Services about my inquiry, including consultation scheduling, property showings, listing updates, and appointment reminders, at the mobile number provided. Consent is not a condition of purchase. Message frequency varies. Message and data rates may apply. Reply STOP to opt out at any time or HELP for help. See our <a href="sms-terms.html">SMS Terms</a> and <a href="privacy-policy.html">Privacy Policy</a>.</label>
+        </div>
+        <button class="btn" type="submit">Send Message</button>
+        <p class="form-note">Your information will not be sold or shared with third parties for their marketing purposes.</p>
+        <div class="success" id="form-success">Thank you! Your message has been received. We will be in touch shortly.</div>
+      </form>
+    </div>
+  </div>
+</section>
+<script>
+document.getElementById('contact-form').addEventListener('submit',function(e){
+  e.preventDefault();
+  if(!this.checkValidity()){this.reportValidity();return;}
+  this.querySelector('#form-success').style.display='block';
+  this.querySelector('button[type=submit]').disabled=true;
+});
+</script>
+<footer>
+  <div class="container">
+    <div class="grid cols-3">
+      <div>
+        <h3>Broadus Consulting Services</h3>
+        <p>Residential real estate consulting, buyer and seller representation, and investment property guidance.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li>Phone: <a href="tel:+14802625011">(480) 262-5011</a></li>
+          <li>Email: <a href="mailto:jbroadus@adaxahome.com">jbroadus@adaxahome.com</a></li>
+          <li>8301 S Taylor Dr<br>Tempe, AZ 85284</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="sms-terms.html">SMS / Text Messaging Terms</a></li>
+          <li><a href="contact.html">Text Message Opt-In</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legalline">
+      &copy; <span id="year"></span> Broadus Consulting Services. All rights reserved.
+      <div class="eho">&#8962; Equal Housing Opportunity. Broadus Consulting Services is committed to compliance with all federal, state, and local fair housing laws.</div>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
